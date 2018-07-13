@@ -60,7 +60,7 @@ function make_oidc(oidcConfig)
 end
 
 function introspect(oidcConfig)
-  if utils.has_bearer_access_token(oidcConfig.auth_header_name) or oidcConfig.bearer_only == "yes" then
+  if utils.has_bearer_access_token(oidcConfig.custom_auth_header_name) or oidcConfig.bearer_only == "yes" then
     local res, err = require("resty.openidc").introspect(oidcConfig)
     if err then
       if oidcConfig.bearer_only == "yes" then

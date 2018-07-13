@@ -6,7 +6,7 @@ return {
     discovery = { type = "string", required = true, default = "https://.well-known/openid-configuration" },
     introspection_endpoint = { type = "string", required = false },
     bearer_only = { type = "string", required = true, default = "no" },
-    auth_header_name = { type = "string", required = true, default = "Authorization"},
+    custom_auth_header_name = { type = "string", required = true, default = "Authorization"},
     realm = { type = "string", required = true, default = "kong" },
     redirect_uri_path = { type = "string" },
     scope = { type = "string", required = true, default = "openid" },
