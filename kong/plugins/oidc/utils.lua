@@ -70,8 +70,8 @@ function M.injectUser(user)
   ngx.ctx.authenticated_credential = tmp_user
 end
 
-function M.has_bearer_access_token()
-  local header = ngx.req.get_headers()['Authorization']
+function M.has_bearer_access_token(auth_header_name)
+  local header = ngx.req.get_headers()[auth_header_name]
   if header and header:find(" ") then
     local divider = header:find(' ')
     if string.lower(header:sub(0, divider-1)) == string.lower("Bearer") then
